@@ -181,7 +181,6 @@ class CarsController extends Controller
         //
     }
 
-
     public function all()
     {
         $result = Car::with('images')->get();
