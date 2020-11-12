@@ -63,11 +63,9 @@ class CarsController extends Controller
         $car->gearbox = $request->gearbox;
         $car->price = $request->price;
         $car->coinType = $request->coinType;
-      
     
         $car->save();
-
-        
+     
         if ($files = $request->file('images')) {
             foreach ($files as $file) {
                 $fileName = $file->getClientOriginalName();
@@ -82,7 +80,6 @@ class CarsController extends Controller
             $image->file_name = $imag;
             $image->save();
         }
-
 
         return redirect()->route('cars.index')->with('success', 'Car saved !');
     }
@@ -140,7 +137,6 @@ class CarsController extends Controller
         $car->gearbox = $request->gearbox;
         $car->price = $request->price;
         $car->coinType = $request->coinType;
-      
     
         $car->update();
 
@@ -183,5 +179,13 @@ class CarsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function all()
+    {
+        $result = Car::with('images')->get();
+
+        return view('cars.show', compact('result'));
     }
 }
