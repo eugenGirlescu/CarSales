@@ -12,6 +12,7 @@ class CarsController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -64,7 +65,7 @@ class CarsController extends Controller
         $car->coinType = $request->coinType;
     
         $car->save();
-
+     
         if ($files = $request->file('images')) {
             foreach ($files as $file) {
                 $fileName = $file->getClientOriginalName();
@@ -79,6 +80,7 @@ class CarsController extends Controller
             $image->file_name = $imag;
             $image->save();
         }
+
         return redirect()->route('cars.index')->with('success', 'Car saved !');
     }
 
@@ -178,6 +180,7 @@ class CarsController extends Controller
     {
         //
     }
+
 
     public function all()
     {
