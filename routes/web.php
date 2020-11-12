@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::resource('/cars', CarsController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get("/cars/create", [App\Http\Controllers\CarsController::class, 'create'])->name('cars.create')->middleware(['role:0,1']);
+
