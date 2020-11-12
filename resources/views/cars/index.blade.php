@@ -7,7 +7,7 @@
             <h2>Cars on sale</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('cars.create') }}" title="Create a product"> <i
+            <a class="btn btn-success" href="{{ route('cars.create') }}" title="Add a car"> <i
                     class="fas fa-plus-circle"></i>Add car</a>
         </div>
     </div>
