@@ -26,5 +26,3 @@ Route::resource('/cars', CarsController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get("/cars/create", [App\Http\Controllers\CarsController::class, 'create'])->name('cars.create')->middleware(['role:0,1']);
-
-Route::get('/all', [App\Http\Controllers\CarsController::class, 'all']);

@@ -92,7 +92,12 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        //
+        $image[] = Image::join('cars', 'images.car_id', '=', 'cars.id')
+        ->where('images.car_id', '=', $id)
+        ->select('images.file_name')
+        ->get();
+
+        return view('cars.show', compact('image'));
     }
 
     /**
@@ -147,7 +152,6 @@ class CarsController extends Controller
                     $path = $destionationPath . '/' . $image->file_name;
                     unset($path);
                 }
-            
                 $image->delete();
             });
             
@@ -166,7 +170,6 @@ class CarsController extends Controller
                 $image->save();
             }
         }
-    
         return redirect()->route('cars.index')->with('success', 'Car updated !');
     }
 
@@ -176,15 +179,17 @@ class CarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Car $car)
     {
-        //
-    }
+        Image::join('cars', 'images.car_id', '=', 'cars.id')
+        ->where('images.car_id', '=', $car->id)
+        ->select('images.file_name')
+        ->delete();
 
-    public function all()
-    {
-        $result = Car::with('images')->get();
+    
 
-        return view('cars.show', compact('result'));
+        $car->delete();
+
+        return redirect()->route('cars.index')->with('success', 'Car deleted');
     }
 }

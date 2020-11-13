@@ -44,6 +44,9 @@
             <a href="{{ route('cars.edit', $res->id) }}" class="btn btn-primary">Edit</a>
         </td>
         <td>
+            <a href="{{ route('cars.show', $res->id) }}" class="btn btn-primary">Show</a>
+        </td>
+        <td>
             <form action="{{ route('cars.destroy', $res->id)}}" method="post">
                 @csrf
                 @method('DELETE')
