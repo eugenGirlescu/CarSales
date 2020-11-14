@@ -19,17 +19,19 @@
 </div>
 @endif
 
-<table class="table table-striped table-dark table-responsive-lg">
-    <tr>
-        <th>Model</th>
-        <th>Seats</th>
-        <th>Fuel</th>
-        <th>Year</th>
-        <th>Color</th>
-        <th>Gearbox</th>
-        <th>Price</th>
-        <th>Coin-type</th>
-    </tr>
+<table class="table table-striped table-hover table-dark table-responsive-lg ">
+    <thead>
+        <tr>
+            <th>Model</th>
+            <th>Seats</th>
+            <th>Fuel</th>
+            <th>Year</th>
+            <th>Color</th>
+            <th>Gearbox</th>
+            <th>Price</th>
+            <th>Coin-type</th>
+        </tr>
+    </thead>
     @foreach ($result as $res)
     <tr>
         <td>{{ $res->model }}</td>

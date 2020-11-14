@@ -14,12 +14,10 @@ use App\Http\Controllers\CarsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 Auth::routes();
+
+Route::get('/', [App\Http\Controllers\CarsController::class, 'welcomePage']);
 
 Route::resource('/cars', CarsController::class);
 

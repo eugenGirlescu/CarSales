@@ -10,7 +10,7 @@ class CarsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['getActivate', 'welcomePage']]);
     }
 
     /**
@@ -97,7 +97,9 @@ class CarsController extends Controller
         ->select('images.file_name')
         ->get();
 
-        return view('cars.show', compact('image'));
+        $cars = Car::find($id);
+
+        return view('cars.show', compact('image', 'cars'));
     }
 
     /**
@@ -185,11 +187,14 @@ class CarsController extends Controller
         ->where('images.car_id', '=', $car->id)
         ->select('images.file_name')
         ->delete();
-
-    
-
+        
         $car->delete();
 
         return redirect()->route('cars.index')->with('success', 'Car deleted');
+    }
+
+    public function welcomePage()
+    {
+        return view('welcome');
     }
 }
