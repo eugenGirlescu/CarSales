@@ -2,31 +2,35 @@
 
 @section('content')
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    </ol>
-    <div class="carousel-inner d-block w-25 p-3">
+<div class="card text-center">
+    <div class="card-header bg-dark text-white">
+        <h1> {{ $cars->model }}</h1>
+    </div>
+    <div class="card-body bg-light text-dark">
+        <h5 class="card-title">Price: {{ $cars->price }} {{ $cars->coinType }}</h5>
+        <p class="card-text">Fuel: {{ $cars->fuel }}</p>
+        <p class="card-text">Seats: {{ $cars->seats }}</p>
+        <p class="card-text">Year: {{ $cars->year }}</p>
+        <p class="card-text">Gearbox: {{ $cars->gearbox }}</p>
+        <a href="{{ route('cars.index') }}" class="btn btn-primary">Back to list</a>
+    </div>
+    <div class="card-footer text-muted">
+        Last update: {{ $cars->updated_at }}
+    </div>
+</div>
+<div class="container">
+    <div class="row imagetiles">
         @foreach($image as $res)
         @foreach($res as $key => $result)
-        <div class=" carousel-item {{$key == 0 ? 'active' : '' }}">
-            <img class="d-block w-100" src="{{ asset('images/' . $result->file_name)}}" class="d-block w-100"
-                alt="{{ $result->model }}">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <a href="{{ asset('images/' . $result->file_name)}}" target="_blank">
+                <img src="{{ asset('images/' . $result->file_name)}}" class="d-block w-100" style="width:100%">
+            </a>
         </div>
         @endforeach
         @endforeach
     </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"> </span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
 </div>
-
-
 
 
 @endsection
