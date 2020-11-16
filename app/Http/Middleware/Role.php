@@ -20,7 +20,7 @@ class Role
         if (\Auth::user()->role == $admin) {
             return $next($request);
         } elseif (\Auth::user()->role == $guest) {
-            abort(403, "Cannot access to restricted page");
+            return redirect('redirect');
         }
     }
 }

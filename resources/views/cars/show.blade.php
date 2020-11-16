@@ -7,11 +7,11 @@
         <h1> {{ $cars->model }}</h1>
     </div>
     <div class="card-body bg-light text-dark">
-        <h5 class="card-title">Price: {{ $cars->price }} {{ $cars->coinType }}</h5>
-        <p class="card-text">Fuel: {{ $cars->fuel }}</p>
-        <p class="card-text">Seats: {{ $cars->seats }}</p>
-        <p class="card-text">Year: {{ $cars->year }}</p>
-        <p class="card-text">Gearbox: {{ $cars->gearbox }}</p>
+        <h5 class="card-title text-primary">Price: {{ $cars->price }} {{ $cars->coinType }}</h5>
+        <p class="card-text text-primary">Fuel: {{ $cars->fuel }}</p>
+        <p class="card-text text-primary">Seats: {{ $cars->seats }}</p>
+        <p class="card-text text-primary">Year: {{ $cars->year }}</p>
+        <p class="card-text text-light bg-dark">Gearbox: {{ $cars->gearbox }}</p>
         <a href="{{ route('cars.index') }}" class="btn btn-primary">Back to list</a>
     </div>
     <div class="card-footer text-muted">

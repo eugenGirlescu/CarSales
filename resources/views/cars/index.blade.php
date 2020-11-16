@@ -3,12 +3,14 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Cars on sale</h2>
+        <div class="card-header">
+            <h1 class="card text-center">Cars on sale</h1>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('cars.create') }}" title="Create a product"> <i
+            @if(Auth::user()->role == '0')
+            <a class="btn btn-success" href="{{ route('cars.create') }}" title="Create car"> <i
                     class="fas fa-plus-circle"></i>Add car</a>
+            @endif
         </div>
     </div>
 </div>
@@ -42,12 +44,16 @@
         <td>{{ $res->gearbox }}</td>
         <td>{{ $res->price }}</td>
         <td>{{ $res->coinType }}</td>
+
+        @if(Auth::user()->role == '0')
         <td>
             <a href="{{ route('cars.edit', $res->id) }}" class="btn btn-primary">Edit</a>
         </td>
+        @endif
         <td>
             <a href="{{ route('cars.show', $res->id) }}" class="btn btn-primary">Show</a>
         </td>
+        @if(Auth::user()->role == '0')
         <td>
             <form action="{{ route('cars.destroy', $res->id)}}" method="post">
                 @csrf
@@ -55,9 +61,12 @@
                 <button class="btn btn-danger" type="submit">Delete</button>
             </form>
         </td>
+        @endif
     </tr>
     @endforeach
 </table>
-
+@if(Auth::user()->role == '0')
+<a href="{{ route('admin') }}" class="btn btn-primary">Back to admin page</a>
+@endif
 
 @endsection

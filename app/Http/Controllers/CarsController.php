@@ -195,6 +195,23 @@ class CarsController extends Controller
 
     public function welcomePage()
     {
-        return view('welcome');
+        $cars = Car::orderBy('id', 'desc')->take(3)->get();
+        return view('welcome', compact('cars'));
+    }
+
+    public function redirect()
+    {
+        return view('redirect');
+    }
+
+    public function admin()
+    {
+        $all = Car::all()->count();
+        
+        $lei = Car::select('price')
+        ->where('coinType', '=', 'LEI')
+        ->sum('price');
+       
+        return view('admin.admin', compact('all', 'lei'));
     }
 }

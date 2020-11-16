@@ -105,7 +105,8 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-12 ">
                     <button type="submit" class="btn btn-primary">Add car</button>
-                    <a class="btn btn-primary" href="{{ route('cars.index') }}"> Back</a>
+                    <a class="btn btn-primary" href="{{ route('cars.index') }}"> Back to list</a>
+                    <a class="btn btn-primary" href="{{ route('admin') }}"> Back to admin page</a>
                 </div>
         </div>
         </form>
