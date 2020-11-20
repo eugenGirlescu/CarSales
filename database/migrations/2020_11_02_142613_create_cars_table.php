@@ -21,6 +21,7 @@ class CreateCarsTable extends Migration
             $table->integer('year');
             $table->string('color');
             $table->string('gearbox');
+            $table->string('buyWith');
             $table->integer('price');
             $table->string('coinType');
             $table->timestamps();

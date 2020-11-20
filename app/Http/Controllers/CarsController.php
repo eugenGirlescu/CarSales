@@ -61,6 +61,7 @@ class CarsController extends Controller
         $car->year = $request->year;
         $car->color = $request->color;
         $car->gearbox = $request->gearbox;
+        $car->buyWith = $request->buyWith;
         $car->price = $request->price;
         $car->coinType = $request->coinType;
     
@@ -142,6 +143,7 @@ class CarsController extends Controller
         $car->year = $request->year;
         $car->color = $request->color;
         $car->gearbox = $request->gearbox;
+        $car->buyWith = $request->buyWith;
         $car->price = $request->price;
         $car->coinType = $request->coinType;
     
@@ -195,8 +197,19 @@ class CarsController extends Controller
 
     public function welcomePage()
     {
-        $cars = Car::orderBy('id', 'desc')->take(3)->get();
-        return view('welcome', compact('cars'));
+        $car = Car::orderBy('created_at', 'desc')->take(6)->get();
+       
+        if (!$car->isEmpty()) {
+            foreach ($car as $c) {
+                $images[] = Image::join('cars', 'images.car_id', '=', 'cars.id')
+                    ->where('images.car_id', '=', $c->id)
+                    ->select('images.file_name', 'cars.model', 'cars.updated_at', 'cars.id')
+                    ->first();
+            }
+            return view('welcome', compact('images'));
+        } else {
+            return view('welcome');
+        }
     }
 
     public function redirect()

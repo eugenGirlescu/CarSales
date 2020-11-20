@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style>
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+</style>
 <div class="card text-center">
     <div class="card-header bg-dark text-white">
         <h1> {{ $cars->model }}</h1>
@@ -13,6 +19,7 @@
         <p class="card-text text-primary">Year: {{ $cars->year }}</p>
         <p class="card-text text-light bg-dark">Gearbox: {{ $cars->gearbox }}</p>
         <a href="{{ route('cars.index') }}" class="btn btn-primary">Back to list</a>
+        <a href="{{ route('welcome') }}" class="btn btn-primary">Back to first page</a>
     </div>
     <div class="card-footer text-muted">
         Last update: {{ $cars->updated_at }}
@@ -24,13 +31,13 @@
         @foreach($res as $key => $result)
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
             <a href="{{ asset('images/' . $result->file_name)}}" target="_blank">
-                <img src="{{ asset('images/' . $result->file_name)}}" class="d-block w-100" style="width:100%">
+                <img src="{{ asset('images/' . $result->file_name)}}" alt="{{ $result->file_name }}"
+                    class="d-block w-100 card-img-top" style="width:100%">
             </a>
         </div>
         @endforeach
         @endforeach
     </div>
 </div>
-
 
 @endsection

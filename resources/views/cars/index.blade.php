@@ -9,7 +9,7 @@
         <div class="pull-right">
             @if(Auth::user()->role == '0')
             <a class="btn btn-success" href="{{ route('cars.create') }}" title="Create car"> <i
-                    class="fas fa-plus-circle"></i>Add car</a>
+                    class="fas fa-plus-circle"></i> Add car</a>
             @endif
         </div>
     </div>
@@ -47,18 +47,21 @@
 
         @if(Auth::user()->role == '0')
         <td>
-            <a href="{{ route('cars.edit', $res->id) }}" class="btn btn-primary">Edit</a>
+            <a href="{{ route('cars.edit', $res->id) }}" class="btn btn-primary"><i class="fa fa-pencil"
+                    aria-hidden="true"> Edit</i></a>
         </td>
         @endif
         <td>
-            <a href="{{ route('cars.show', $res->id) }}" class="btn btn-primary">Show</a>
+            <a href="{{ route('cars.show', $res->id) }}" class="btn btn-primary"><i class="fa fa-eye"
+                    aria-hidden="true"> Show</i></a>
         </td>
         @if(Auth::user()->role == '0')
         <td>
             <form action="{{ route('cars.destroy', $res->id)}}" method="post">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-danger" type="submit">Delete</button>
+                <button class="btn btn-danger" type="submit"><i class="fa fa-trash" aria-hidden="true">
+                        Delete</i></button>
             </form>
         </td>
         @endif
@@ -66,7 +69,7 @@
     @endforeach
 </table>
 @if(Auth::user()->role == '0')
-<a href="{{ route('admin') }}" class="btn btn-primary">Back to admin page</a>
+<a href="{{ route('admin') }}" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"> Admin page</i></a>
 @endif
 
 @endsection

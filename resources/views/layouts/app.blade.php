@@ -26,6 +26,18 @@
 </head>
 
 <body>
+    <style>
+    hr {
+        border: none;
+        height: 20px;
+        width: 90%;
+        height: 50px;
+        margin-top: 0;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+        margin: -50px auto 10px;
+    }
+    </style>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
@@ -99,11 +111,27 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <footer class="section-grey" style="padding: 90px;">
+        <div class="card-footer">
+            <ul class="list-links">
+                <li><i>Este usor sa discuti doar cu noi.</i></li>
+            </ul>
+            <ul class="list-links">
+                <li>Echipa este la dispozitia ta</li>
+                <li><b>Program :</b></li>
+                <li>Luni-Vineri 09:00 - 19:00</li>
+                <li>Sambata-Duminica 09:00 - 17:00</li>
+                <li>Telefon: </li>
+                <li>Email:</li>
+            </ul>
+        </div class="card-footer">
+        </div>
+        </div>
+    </footer>
 </body>
 
 </html>

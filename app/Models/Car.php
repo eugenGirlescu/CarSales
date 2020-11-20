@@ -14,6 +14,7 @@ class Car extends Model
         'year',
         'color',
         'gearbox',
+        'buyWith',
         'price',
         'coinType',
     ];
