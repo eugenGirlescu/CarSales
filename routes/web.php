@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarsController;
+use App\Http\Controllers\SocialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,7 @@ Route::get('/cars', [App\Http\Controllers\CarsController::class, 'index'])->name
 Route::get('/redirect', [App\Http\Controllers\CarsController::class, 'redirect']);
 
 Route::get('/admin', [App\Http\Controllers\CarsController::class, 'admin'])->name('admin')->middleware(['role:0,1']);
+
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
+
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);

@@ -128,8 +128,8 @@
                 <li>Telefon: </li>
                 <li>Email:</li>
             </ul>
-        </div class="card-footer">
-        </div>
+            <p align="center"> &copy;<?php echo date('Y') ?> Toate drepturile rezervate.</p>
+            <div class="col-md-3 mb-md-0 mb-3">lalal</div>
         </div>
     </footer>
 </body>
