@@ -12,6 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -101,7 +102,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('cars.index') }}">{{ __('Contact') }}</a>
                         </li>
-                        @if(Auth::user()->role == '0')
+                        @if(Auth::user()->role == 'admin')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin') }}">{{ __('Admin') }}</a>
                         </li>
