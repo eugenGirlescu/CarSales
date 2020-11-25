@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarsController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +25,18 @@ Route::resource('/cars', CarsController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get("/cars/create", [App\Http\Controllers\CarsController::class, 'create'])->name('cars.create')->middleware(['role:0,1']);
+Route::get("/cars/create", [App\Http\Controllers\CarsController::class, 'create'])->name('cars.create')->middleware(['role:admin,normal']);
 
 Route::get('/cars', [App\Http\Controllers\CarsController::class, 'index'])->name('cars.index');
 
 Route::get('/redirect', [App\Http\Controllers\CarsController::class, 'redirect']);
 
-Route::get('/admin', [App\Http\Controllers\CarsController::class, 'admin'])->name('admin')->middleware(['role:0,1']);
+Route::get('/admin', [App\Http\Controllers\CarsController::class, 'admin'])->name('admin')->middleware(['role:admin,normal']);
 
 Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 
 Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+
+Route::get('/change-admin', [AdminController::class,'showChangeForm'])->name('change');
+
+Route::post('/change-admin', [AdminController::class,'changeAdmin']);

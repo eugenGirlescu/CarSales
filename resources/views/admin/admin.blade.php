@@ -10,10 +10,10 @@
                     list</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-outline-primary" href="{{ route('cars.create') }}">Create </a>
+                <a class="nav-link btn btn-outline-primary" href="{{ route('cars.create') }}">Create a car</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-outline-primary" href="#">Disabled</a>
+                <a class="nav-link btn btn-outline-primary" href="{{ route('change') }}">Change admin</a>
             </li>
         </ul>
     </div>
