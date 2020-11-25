@@ -12,8 +12,8 @@
     <p class="h4 mb-4">Change user role</p>
     <input type="text" id="email" name="email" class="form-control mb-4" placeholder="E-mail">
     <select id="role" name="role">
-        <option value="admin">Admin</option>
-        <option value="normal">Normal</option>
+        <option value="admin">ADMIN</option>
+        <option value="normal">NORMAL</option>
     </select>
     </div>
     <button class="btn btn-info btn-block my-4" type="submit">Change</button>

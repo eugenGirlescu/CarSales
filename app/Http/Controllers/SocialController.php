@@ -19,12 +19,12 @@ class SocialController extends Controller
     public function loginWithFacebook()
     {
         try {
-            $user = Socialite::driver('facebook')->user();
+            $user = Socialite::driver('facebook')->stateless()->user();
             $isUser = User::where('fb_id', $user->id)->first();
      
             if ($isUser) {
                 Auth::login($isUser);
-                return redirect('/home');
+                return redirect('/home#');
             } else {
                 $createUser = User::create([
                     'name' => $user->name,
@@ -32,9 +32,8 @@ class SocialController extends Controller
                     'fb_id' => $user->id,
                     'password' => encrypt('admin@123')
                 ]);
-    
                 Auth::login($createUser);
-                return redirect('/home');
+                return redirect('/home#');
             }
         } catch (Exception $exception) {
             dd($exception->getMessage());

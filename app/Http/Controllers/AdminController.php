@@ -25,6 +25,6 @@ class AdminController extends Controller
             ->where('email', $mail)
             ->update(['role' => $role]);
 
-        return redirect()->route('change')->with('success', 'User updated !');
+        return redirect()->route('change')->with('success', 'User updated!');
     }
 }
