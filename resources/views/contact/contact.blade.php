@@ -16,7 +16,8 @@
             <br />
             <div class="col-md-6">
                 <h3>Contact us:</h3><br>
-                <form class="form" id="contact" action="" method="POST">
+                <form class="form" id="contact" action="{{ route('contact') }}" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="form-group col-md-6">
                             <input name="name" class="form-control" id="name" placeholder="Name" type="text">
@@ -33,6 +34,11 @@
                                 <input type="submit" class="primary-btn pull-right" name="send" value="Send">
                             </div>
                         </div>
+                        @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ session()->get('success') }} </p>
+                        </div>
+                        @endif
                     </div>
                 </form>
             </div>

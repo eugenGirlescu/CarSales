@@ -43,3 +43,5 @@ Route::get('/change-admin', [AdminController::class,'showChangeForm'])->name('ch
 Route::post('/change-admin', [AdminController::class,'changeAdmin']);
 
 Route::get('/contact', [ContactController::class,'showContactForm'])->name('contact');
+
+Route::post('/contact', [ContactController::class,'submitContactForm']);
