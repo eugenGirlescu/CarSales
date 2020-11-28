@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarsController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,5 @@ Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFaceboo
 Route::get('/change-admin', [AdminController::class,'showChangeForm'])->name('change');
 
 Route::post('/change-admin', [AdminController::class,'changeAdmin']);
+
+Route::get('/contact', [ContactController::class,'showContactForm'])->name('contact');

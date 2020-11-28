@@ -76,7 +76,7 @@
                         </li>
                         @endif
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cars.index') }}">{{ __('Contact') }}</a>
+                            <a class="nav-link" href="{{ route('contact') }}">{{ __('Contact') }}</a>
                         </li>
                         @else
                         <li class="nav-item dropdown">
@@ -100,7 +100,7 @@
                             <a class="nav-link" href="{{ route('cars.index') }}">{{ __('Cars') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cars.index') }}">{{ __('Contact') }}</a>
+                            <a class="nav-link" href="{{ route('contact') }}">{{ __('Contact') }}</a>
                         </li>
                         @if(Auth::user()->role == 'admin')
                         <li class="nav-item">
