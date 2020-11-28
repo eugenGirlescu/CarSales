@@ -23,7 +23,8 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
 </head>
 
 <body>
@@ -76,7 +77,7 @@
                         </li>
                         @endif
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cars.index') }}">{{ __('Contact') }}</a>
+                            <a class="nav-link" href="{{ route('contact') }}">{{ __('Contact') }}</a>
                         </li>
                         @else
                         <li class="nav-item dropdown">
@@ -100,7 +101,7 @@
                             <a class="nav-link" href="{{ route('cars.index') }}">{{ __('Cars') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cars.index') }}">{{ __('Contact') }}</a>
+                            <a class="nav-link" href="{{ route('contact') }}">{{ __('Contact') }}</a>
                         </li>
                         @if(Auth::user()->role == 'admin')
                         <li class="nav-item">
