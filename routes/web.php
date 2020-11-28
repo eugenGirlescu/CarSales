@@ -30,9 +30,9 @@ Route::get("/cars/create", [App\Http\Controllers\CarsController::class, 'create'
 
 Route::get('/cars', [App\Http\Controllers\CarsController::class, 'index'])->name('cars.index');
 
-Route::get('/redirect', [App\Http\Controllers\CarsController::class, 'redirect']);
+Route::get('/redirect', [App\Http\Controllers\AdminController::class, 'redirect']);
 
-Route::get('/admin', [App\Http\Controllers\CarsController::class, 'admin'])->name('admin')->middleware(['role:admin,normal']);
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'admin'])->name('admin')->middleware(['role:admin,normal']);
 
 Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 

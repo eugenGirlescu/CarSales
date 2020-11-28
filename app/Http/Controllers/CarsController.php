@@ -211,20 +211,4 @@ class CarsController extends Controller
             return view('welcome');
         }
     }
-
-    public function redirect()
-    {
-        return view('redirect');
-    }
-
-    public function admin()
-    {
-        $all = Car::all()->count();
-        
-        $lei = Car::select('price')
-        ->where('coinType', '=', 'LEI')
-        ->sum('price');
-       
-        return view('admin.admin', compact('all', 'lei'));
-    }
 }
