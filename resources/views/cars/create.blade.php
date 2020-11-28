@@ -105,11 +105,8 @@
                         <label for="image" class="col-form-label">Upload images :</label>
                     </legend>
                     <input type="file" class="form-control" name="images[]" multiple />
-                </div>
-
-
+                </div><br><br><br>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-
                 <div class="col-xs-12 col-sm-12 col-md-12 ">
                     <button type="submit" class="btn btn-primary">Add car</button>
                     <a class="btn btn-primary" href="{{ route('cars.index') }}"> Back to list</a>

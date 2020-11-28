@@ -117,23 +117,6 @@
             @yield('content')
         </main>
     </div>
-    <footer class="section-grey" style="padding: 90px;">
-        <div class="card-footer">
-            <ul class="list-links">
-                <li><i>Este usor sa discuti doar cu noi.</i></li>
-            </ul>
-            <ul class="list-links">
-                <li>Echipa este la dispozitia ta</li>
-                <li><b>Program :</b></li>
-                <li>Luni-Vineri 09:00 - 19:00</li>
-                <li>Sambata-Duminica 09:00 - 17:00</li>
-                <li>Telefon: </li>
-                <li>Email:</li>
-            </ul>
-            <p align="center"> &copy;<?php echo date('Y') ?> Toate drepturile rezervate.</p>
-            <div class="col-md-3 mb-md-0 mb-3">lalal</div>
-        </div>
-    </footer>
 </body>
 
 </html>
