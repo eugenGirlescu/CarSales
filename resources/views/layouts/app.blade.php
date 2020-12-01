@@ -28,18 +28,6 @@
 </head>
 
 <body>
-    <style>
-    hr {
-        border: none;
-        height: 20px;
-        width: 90%;
-        height: 50px;
-        margin-top: 0;
-        border-bottom: 1px solid #1f1209;
-        box-shadow: 0 20px 20px -20px #333;
-        margin: -50px auto 10px;
-    }
-    </style>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
@@ -117,6 +105,78 @@
             @yield('content')
         </main>
     </div>
+    <hr>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">Contact us</h5>
+                    <p>Our team is here for you..</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Social media :</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://www.facebook.com/Parc-Auto-Bals-1550528411629952"><i
+                                    class="fab fa-facebook-square" style="font-size:36px"></i></a>
+                        </li>
+                        <li>
+                            <a href="#!"><i class="fab fa-whatsapp" style=" font-size:36px;color:green"></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">About :</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>Email : test@yahoo.com</p>
+                        </li>
+                        <li>
+                            <p>Phone : 07xx xxx xxx</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© <?php echo date("Y"); ?> Copyright.
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
 </body>
 
 </html>

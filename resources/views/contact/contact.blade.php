@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
 <section class="contact-us">
     <div class="container">
         <div class="row">
@@ -54,10 +52,8 @@
             </div>
         </div>
     </div>
-
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDodelx0L_N8QNL0900_R0H1X3pm4HVIEg&callback">
     </script>
-
     <script>
     var myCenter = new google.maps.LatLng(44.353656, 24.158268);
 
@@ -67,18 +63,13 @@
             zoom: 12,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-
         var map = new google.maps.Map(document.getElementById("map"), mapProp);
-
         var marker = new google.maps.Marker({
             position: myCenter,
         });
-
         marker.setMap(map);
     }
-
     google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 </section>
-
 @endsection
