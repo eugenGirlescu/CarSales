@@ -75,6 +75,10 @@ body {
     color: #212529;
     text-align: left;
     background-color: #f8fafc;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -628,6 +632,7 @@ pre code {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    margin-top: 75px;
 }
 
 .no-gutters {
@@ -4552,7 +4557,10 @@ input[type="button"].btn-block {
 }
 
 .navbar {
-    position: relative;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 99;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -11043,4 +11051,11 @@ hr {
         -webkit-background-size: cover;
         background-size: cover;
     }
+}
+
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
