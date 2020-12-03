@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Car;
+use App\Models\Contact;
 use DB;
 
 class AdminController extends Controller
@@ -18,11 +19,13 @@ class AdminController extends Controller
     {
         $all = Car::all()->count();
         
-        $lei = Car::select('price')
-        ->where('coinType', '=', 'LEI')
-        ->sum('price');
+        $eur = Car::select('buyWith')
+        ->where('coinType', '=', 'EUR')
+        ->sum('buyWith');
+
+        $contactMessages = Contact::all();
        
-        return view('admin.admin', compact('all', 'lei'));
+        return view('admin.admin', compact('all', 'eur', 'contactMessages'));
     }
     
     public function showChangeForm()
