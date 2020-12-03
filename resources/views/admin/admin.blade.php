@@ -36,6 +36,11 @@
             </div>
         </div>
     </div>
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ session()->get('success') }} </p>
+    </div>
+    @endif
     <table class="table table-striped table-hover table-dark table-responsive-lg ">
         <thead>
             <tr>
@@ -53,17 +58,26 @@
             <td>{{ $message->created_at }}</td>
 
             <td>
-                <form action="{{ route('cars.destroy', $message->id)}}" method="post">
+                <form action="{{ route('contact.destroy', $message->id)}}" method="post">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger" type="submit"><i class="fa fa-trash" aria-hidden="true">
-                            Delete</i></button>
+                    <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip"
+                        title='Delete'> <i class="fa fa-trash"> </i>
+                        Delete</button>
                 </form>
             </td>
-
         </tr>
         @endforeach
     </table>
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('.show_confirm').click(function(e) {
+    if (!confirm('Are you sure you want to delete this?')) {
+        e.preventDefault();
+    }
+});
+</script>
 
 @endsection

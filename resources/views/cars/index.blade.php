@@ -60,16 +60,27 @@
             <form action="{{ route('cars.destroy', $res->id)}}" method="post">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-danger" type="submit"><i class="fa fa-trash" aria-hidden="true">
-                        Delete</i></button>
+                <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip"
+                    title='Delete'> <i class="fa fa-trash"> </i>
+                    Delete</button>
             </form>
         </td>
         @endif
     </tr>
     @endforeach
 </table>
+
 @if(Auth::user()->role == 'admin')
 <a href="{{ route('admin') }}" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"> Admin page</i></a>
 @endif
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('.show_confirm').click(function(e) {
+    if (!confirm('Are you sure you want to delete this?')) {
+        e.preventDefault();
+    }
+});
+</script>
 @endsection
