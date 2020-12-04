@@ -10,7 +10,7 @@ class CarsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['getActivate', 'welcomePage']]);
+        $this->middleware('auth', ['except' => ['getActivate', 'welcomePage','index']]);
     }
 
     /**
