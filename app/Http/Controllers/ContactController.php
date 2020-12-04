@@ -30,4 +30,11 @@ class ContactController extends Controller
 
         return redirect()->route('contact')->with('success', 'Message sent!');
     }
+
+    public function destroy($id)
+    {
+        Contact::find($id)->delete();
+
+        return redirect()->route('admin')->with('success', 'Message deleted!');
+    }
 }

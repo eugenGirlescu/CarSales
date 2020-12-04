@@ -45,3 +45,5 @@ Route::post('/change-admin', [AdminController::class,'changeAdmin']);
 Route::get('/contact', [ContactController::class,'showContactForm'])->name('contact');
 
 Route::post('/contact', [ContactController::class,'submitContactForm']);
+
+Route::delete('/contact/{id}', [ContactController::class,'destroy'])->name('contact.destroy');
