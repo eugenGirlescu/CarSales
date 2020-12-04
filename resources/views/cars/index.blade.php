@@ -7,7 +7,7 @@
             <h1 class="card text-center">Cars on sale</h1>
         </div>
         <div class="pull-right">
-            @if(Auth::user()->role == 'admin')
+            @if(auth()->check() && Auth::user()->role == 'admin')
             <a class="btn btn-success" href="{{ route('cars.create') }}" title="Create car"> <i
                     class="fas fa-plus-circle"></i> Add car</a>
             @endif
@@ -45,7 +45,7 @@
         <td>{{ $res->price }}</td>
         <td>{{ $res->coinType }}</td>
 
-        @if(Auth::user()->role == 'admin')
+        @if(auth()->check() && Auth::user()->role == 'admin')
         <td>
             <a href="{{ route('cars.edit', $res->id) }}" class="btn btn-primary"><i class="fa fa-pencil"
                     aria-hidden="true"> Edit</i></a>
@@ -55,7 +55,7 @@
             <a href="{{ route('cars.show', $res->id) }}" class="btn btn-primary"><i class="fa fa-eye"
                     aria-hidden="true"> Show</i></a>
         </td>
-        @if(Auth::user()->role == 'admin')
+        @if(auth()->check() && Auth::user()->role == 'admin')
         <td>
             <form action="{{ route('cars.destroy', $res->id)}}" method="post">
                 @csrf
@@ -70,7 +70,7 @@
     @endforeach
 </table>
 
-@if(Auth::user()->role == 'admin')
+@if(auth()->check() && Auth::user()->role == 'admin')
 <a href="{{ route('admin') }}" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"> Admin page</i></a>
 @endif
 
