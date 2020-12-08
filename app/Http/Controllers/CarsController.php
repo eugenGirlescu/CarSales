@@ -18,9 +18,17 @@ class CarsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $result = Car::with('images')->get();
+        if ($request->get('sort') == 'price_asc') {
+            $result = Car::with('images')->orderBy('price', 'ASC')->get();
+        } elseif ($request->get('sort') == 'price_desc') {
+            $result = Car::with('images')->orderBy('price', 'DESC')->get();
+        } elseif ($request->get('sort') == 'newest') {
+            $result = Car::with('images')->orderBy('created_at', 'ASC')->get();
+        } else {
+            $result = Car::with('images')->get();
+        }
 
         return view('cars.index', compact('result'));
     }

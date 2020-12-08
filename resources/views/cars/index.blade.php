@@ -8,9 +8,14 @@
         </div>
         <div class="pull-right">
             @if(auth()->check() && Auth::user()->role == 'admin')
-            <a class="btn btn-success" href="{{ route('cars.create') }}" title="Create car"> <i
+            <a class="btn btn-success mr-3" href="{{ route('cars.create') }}" title="Create car"> <i
                     class="fas fa-plus-circle"></i> Add car</a>
             @endif
+            <span class="font-weight-bold sort-font"> Sort by : </span>
+            <a href="{{ URL::current(). "?sort=price_asc" }}" class="sort-font"> Price : Low to high</a>
+            <a href="{{ URL::current(). "?sort=price_desc" }}" class="sort-font"> Price : High to low</a>
+            <a href="{{ URL::current(). "?sort=newest" }}" class="sort-font"> Newest</a>
+            <a href="{{ URL::current() }}" class="sort-font"> All</a>
         </div>
     </div>
 </div>
@@ -34,6 +39,13 @@
             <th>Coin-type</th>
         </tr>
     </thead>
+
+    @if ($result->count() == 0)
+    <tr>
+        <td colspan="5">No products to display.</td>
+    </tr>
+    @endif
+
     @foreach ($result as $res)
     <tr>
         <td>{{ $res->model }}</td>
