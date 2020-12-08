@@ -11041,6 +11041,13 @@ hr {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.sort-font {
+    color: black;
+    font-size: 15px;
+    margin: 0 10px;
+}
+
 @media screen and (max-width: 600px) {
     .jumbotron {
         padding: 4rem 2rem;
@@ -11049,5 +11056,17 @@ hr {
         background-position: center;
         -webkit-background-size: cover;
         background-size: cover;
+    }
+
+    .card-img-top {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .sort-font {
+        color: black;
+        font-size: 15px;
+        margin: 0 2px;
     }
 }
