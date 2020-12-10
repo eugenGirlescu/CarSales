@@ -78,7 +78,14 @@
 
                 <div class="form-group ">
                     <legend>
-                        <label for="price" class="col-form-label">Price :</label>
+                        <label for="buyWith" class="col-form-label">Buy with :</label>
+                    </legend>
+                    <input type="text" class="form-control" id="buyWith" name="buyWith" value="{{ $res->buyWith }}">
+                </div>
+
+                <div class="form-group ">
+                    <legend>
+                        <label for="price" class="col-form-label">Sell price :</label>
                     </legend>
                     <input type="text" class="form-control" id="price" name="price" value="{{ $res->price }}">
                 </div>

@@ -11036,10 +11036,16 @@ hr {
 }
 
 .jumbotron-image {
-    background-image: url("https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/45146860_2467866583229459_8630876758591143936_o.jpg?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_ohc=_JMxqUnhxoAAX9WP_zQ&_nc_ht=scontent-otp1-1.xx&oh=b580b5029b89609806ba836422ae7769&oe=5FDA03CF");
+    background-image: url("https://www.constantadeazi.ro/wp-content/uploads/2018/10/auto-masina-germania-1280x640.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
 }
 
 .sort-font {
