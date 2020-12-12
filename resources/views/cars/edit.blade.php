@@ -23,7 +23,6 @@
                         <input type="text" class="form-control" id="model" name="model" value="{{ $res->model }}">
                     </legend>
                 </div>
-
                 <div class="form-group ">
                     <legend>
                         <label for="seats" class="col-form-label">Seats :</label>
@@ -37,7 +36,6 @@
                         <option value="8">8</option>
                     </select>
                 </div>
-
                 <div class="form-group ">
                     <legend>
                         <label for="fuel" class="col-form-label">Fuel :</label>
@@ -50,21 +48,18 @@
                         <option value="benzine">benzine</option>
                     </select>
                 </div>
-
                 <div class="form-group ">
                     <legend>
                         <label for="year" class="col-form-label">Year :</label>
                     </legend>
                     <input type="text" name="year" id="year" value="{{ $res->year }}">
                 </div>
-
                 <div class="form-group">
                     <legend>
                         <label for="color" class="col-form-label">Color :</label>
                     </legend>
                     <input type="text" class="form-control" id="color" name="color" value="{{ $res->color }}">
                 </div>
-
                 <div class="form-group ">
                     <legend>
                         <label for="gearbox" class="col-form-label">Gearbox :</label>
@@ -75,21 +70,18 @@
                         <option value="semiautomatic">semiautomatic</option>
                     </select>
                 </div>
-
                 <div class="form-group ">
                     <legend>
                         <label for="buyWith" class="col-form-label">Buy with :</label>
                     </legend>
                     <input type="text" class="form-control" id="buyWith" name="buyWith" value="{{ $res->buyWith }}">
                 </div>
-
                 <div class="form-group ">
                     <legend>
                         <label for="price" class="col-form-label">Sell price :</label>
                     </legend>
                     <input type="text" class="form-control" id="price" name="price" value="{{ $res->price }}">
                 </div>
-
                 <div class="form-group ">
                     <legend>
                         <label for="coinType" class="col-form-label">CoinType :</label>
@@ -100,22 +92,19 @@
                         <option value="USD">USD</option>
                     </select>
                 </div>
-
                 <div class="form-group ">
                     <legend>
                         <label for="image" class="col-form-label">Upload images :</label>
                     </legend>
                     <input type="file" class="form-control" name="images[]" multiple />
                 </div>
-
-
-                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-
-                <div class="col-xs-12 col-sm-12 col-md-12 ">
-                    <button type="submit" class="btn btn-primary">Add car</button>
-                    <a class="btn btn-primary" href="{{ route('cars.index') }}"> Back</a>
-                </div>
+        </div><br><br><br>
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
+            <button type="submit" class="btn btn-primary">Update car</button>
+            <a class="btn btn-primary" href="{{ route('cars.index') }}"> Back</a>
         </div>
-        </form>
+    </div>
+    </form>
 
-        @endsection
+    @endsection
