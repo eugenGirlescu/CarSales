@@ -46,4 +46,6 @@ Route::get('/contact', [ContactController::class,'showContactForm'])->name('cont
 
 Route::post('/contact', [ContactController::class,'submitContactForm']);
 
+Route::get('/privacy-policy', [ContactController::class,'showPrivacyPage'])->name('privacy');
+
 Route::delete('/contact/{id}', [ContactController::class,'destroy'])->name('contact.destroy');
