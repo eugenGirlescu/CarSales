@@ -2,19 +2,24 @@
 
 @section('content')
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v9.0&appId=295396058474636&autoLogAppEvents=1"
+    nonce="IX54gxi2"></script>
 <div class="container py-5">
     <div class="jumbotron text-white jumbotron-image shadow">
         <h2 class="mb-4">
             Parc Auto Bals
         </h2>
-        <p class="mb-4">
-            Hey, check this out.
-        </p>
-        <a href="https://bootstrapious.com/snippets" class="btn btn-primary">More Bootstrap Snippets</a>
+        <a href="{{ route('cars.index') }}" class="btn btn-primary">Parc auto</a>
     </div>
+    <div class="fb-share-button" data-href="https://parc-autobals.ro" data-layout="button_count" data-size="small"><a
+            target="_blank"
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparc-autobals.ro%2F&amp;src=sdkpreparse"
+            class="fb-xfbml-parse-ignore">Distribuie</a></div>
 </div>
 <div class="card-header">
-    <h1 class="card text-left">Recent :</h1>
+    <h1 class="card text-left">Cele mai recente :</h1>
 </div>
 <div class="album py-5 bg-light">
     <div class="container">
@@ -39,7 +44,7 @@
             @endforeach
             @else
             <div class="card-header">
-                <h1 class="card text-left">No cars available</h1>
+                <h1 class="card text-left">No car</h1>
             </div>
             @endif
         </div>
